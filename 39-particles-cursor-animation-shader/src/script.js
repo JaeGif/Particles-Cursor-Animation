@@ -147,7 +147,7 @@ particlesGeometry.setAttribute(
 
 particlesGeometry.setIndex(null);
 particlesGeometry.deleteAttribute('normal');
-
+const randomImageIndex = Math.floor(Math.random() * 3) + 1;
 const particlesMaterial = new THREE.ShaderMaterial({
   vertexShader: particlesVertexShader,
   fragmentShader: particlesFragmentShader,
@@ -158,7 +158,9 @@ const particlesMaterial = new THREE.ShaderMaterial({
         sizes.height * sizes.pixelRatio
       )
     ),
-    uPictureTexture: new THREE.Uniform(textureLoader.load('./picture-1.png')),
+    uPictureTexture: new THREE.Uniform(
+      textureLoader.load(`./picture-${randomImageIndex}.png`)
+    ),
     uDisplacementTexture: new THREE.Uniform(displacement.texture),
   },
 });
