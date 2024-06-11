@@ -83,7 +83,7 @@ displacement.canvas.style.height = '256px';
 displacement.canvas.style.top = 0;
 displacement.canvas.style.left = 0;
 displacement.canvas.style.zIndex = 10;
-document.body.append(displacement.canvas);
+// document.body.append(displacement.canvas);
 // context
 displacement.context = displacement.canvas.getContext('2d');
 displacement.context.fillRect(
@@ -99,7 +99,7 @@ displacement.glowImage.src = './glow.png';
 
 // interactive plane
 displacement.interactivePlane = new THREE.Mesh(
-  new THREE.PlaneGeometry(10, 10, 128, 128),
+  new THREE.PlaneGeometry(10, 10),
   new THREE.MeshBasicMaterial({ side: THREE.DoubleSide })
 );
 displacement.interactivePlane.visible = false;
@@ -114,7 +114,7 @@ displacement.canvasCursorPrevious = new THREE.Vector2(9999, 9999);
 
 window.addEventListener('pointermove', (e) => {
   displacement.screenCursor.x = (e.clientX / sizes.width) * 2 - 1;
-  displacement.screenCursor.y = -(e.clientY / sizes.width) * 2 + 1;
+  displacement.screenCursor.y = -(e.clientY / sizes.height) * 2 + 1;
 });
 
 // displacement texture
