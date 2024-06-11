@@ -18,7 +18,7 @@ void main()
     vec3 displacement = vec3(cos(aAngle) * 0.2, sin(aAngle) * 0.2, 1.0);
     displacement = normalize(displacement); 
     displacement *= displacementIntensity;
-    displacement *= 1.25;
+    displacement *= 3.0;
     displacement *= aIntensity;
 
     newPosition += displacement;

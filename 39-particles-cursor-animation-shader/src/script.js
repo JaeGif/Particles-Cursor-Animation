@@ -196,13 +196,12 @@ const tick = () => {
     displacement.canvas.height
   );
 
-  // cursor speed alpha
+  // Speed alpha
   const cursorDistance = displacement.canvasCursorPrevious.distanceTo(
     displacement.canvasCursor
   );
   displacement.canvasCursorPrevious.copy(displacement.canvasCursor);
-
-  const alpha = Math.min(cursorDistance * 0.1, 1);
+  const alpha = Math.min(cursorDistance * 0.05, 1);
 
   // draw glow
   const glowSize = displacement.canvas.width * 0.25;
